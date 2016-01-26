@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 int count = getSupportFragmentManager().getBackStackEntryCount();
                 if (count < list.length) {
                     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.setCustomAnimations(R.anim.slide_left_in, R.anim.rotate_out, R.anim.slide_left_in, R.anim.rotate_out);
                     ft.replace(R.id.container, list[count]);
                     ft.addToBackStack("index:" + count);
                     ft.commit();
